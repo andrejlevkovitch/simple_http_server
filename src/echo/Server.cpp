@@ -184,13 +184,15 @@ private:
 
 Server::Server(uint maxSessionCount) noexcept
     : imp_{std::make_shared<ServerImp>(maxSessionCount)} {
+  LOG_DEBUG("Server constructor");
 }
 
 Server::~Server() noexcept {
-  LOG_DEBUG("ServerImp destructor");
+  LOG_DEBUG("Server destructor");
 }
 
 void Server::run(std::string_view ip, unsigned int port) noexcept {
   imp_->run(imp_, ip, port);
+  LOG_DEBUG("Server run");
 }
 } // namespace echo
