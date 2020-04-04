@@ -6,18 +6,9 @@
 #include <boost/uuid/random_generator.hpp>
 #include <boost/uuid/string_generator.hpp>
 #include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_hash.hpp>
 #include <boost/uuid/uuid_io.hpp>
 #include <unordered_map>
-
-// XXX we need specialize std::hash for using uuids::hash_value
-namespace std {
-template <>
-struct hash<boost::uuids::uuid> {
-  size_t operator()(const boost::uuids::uuid &uuid) const {
-    return boost::uuids::hash_value(uuid);
-  }
-};
-} // namespace std
 
 namespace echo {
 namespace uuids   = boost::uuids;

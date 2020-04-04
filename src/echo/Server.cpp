@@ -192,7 +192,7 @@ Server::~Server() noexcept {
 }
 
 void Server::run(std::string_view ip, unsigned int port) noexcept {
-  imp_->run(imp_, ip, port);
   LOG_DEBUG("Server run");
+  imp_->run(imp_, ip, port);
 }
 } // namespace echo
