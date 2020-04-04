@@ -5,8 +5,6 @@
 #include <thread>
 
 namespace echo {
-static std::string sMongoUri_;
-
 void Context::init() noexcept {
   // initialize asio io_context and mongo instance (they initialize at first
   // call)
