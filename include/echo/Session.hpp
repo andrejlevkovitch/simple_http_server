@@ -25,7 +25,7 @@ public:
   void close() noexcept;
 
 public:
-  /**\warning signal emited before destructor call, so you can not imideatly
+  /**\note signal emited before destructor call, so you can not imideatly
    * remove session after get the siganl
    * \brief emit after session close
    */
